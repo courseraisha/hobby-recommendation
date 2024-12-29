@@ -98,7 +98,7 @@ export default function Quiz() {
           <div className={styles.sparkleIcon}>
             <Sparkles className={styles.sparkles} />
           </div>
-          <h1 className={styles.title}>What hobbies suit you?</h1>
+          <h1 className="mb-4 text-3xl font-bold text-[#8B1E3F] sm:text-4xl md:text-5xl">What hobbies suit you?</h1>
           {!quizCompleted && (
             <p className={styles.questionCount}>
               Question {currentQuestionIndex + 1} of {questions.length}
