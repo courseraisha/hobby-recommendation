@@ -119,8 +119,8 @@ export default function Quiz() {
               >
                 <Card className={styles.questionCard}>
                   <CardContent className={styles.cardContent}>
-                    <div className={styles.questionText}>
-                      <h2>{currentQuestion.text}</h2>
+                    <div className="text-l font-bold text-[#8B1E3F] sm:text-xl md:text-2xl text-center p-4">
+                     {currentQuestion.text}
                     </div>
                     <div className={styles.optionsGrid}>
                       {currentQuestion.options.map((option, index) => (
@@ -133,9 +133,9 @@ export default function Quiz() {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          <div className={styles.optionContent}>
-                            <div className={styles.optionEmoji}>{emojis[option]}</div>
-                            <div className={styles.optionText}>{option}</div>
+                          <div className="flex flex-col items-center p-2">
+                            <div className="text-5xl">{emojis[option]}</div>
+                            <div className="ml-2 text-xl font-medium text-[#8B1E3F]">{option}</div>
                           </div>
                         </motion.button>
                       ))}
@@ -152,9 +152,8 @@ export default function Quiz() {
             transition={{ duration: 0.5 }}
           >
             <Card className={styles.resultsCard}>
-              <CardContent className={styles.resultsContent}>
-                <h2 className={styles.resultsTitle}>Your Answers ✨</h2>
-                <div className={styles.answersList}>
+              <CardContent>
+                <h2 className="text-2xl font-bold mb-4 text-[#8B1E3F]">Your Answers ✨</h2>
                   {selectedAnswers.map((answer, index) => {
                     const question = questions.find((q) => q.id === answer.questionId)
                     return (
@@ -163,16 +162,15 @@ export default function Quiz() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
-                        className={styles.answerItem}
+                        className="rounded-lg p-2 mb-3 bg-gray-100"
                       >
-                        <p className={styles.answerQuestion}>{question?.text}</p>
-                        <p className={styles.answerOption}>
+                        <p className="font-semibold text-lg text-[#8B1E3F]">{question?.text}</p>
+                        <p className="text-md text-gray-700">
                           {emojis[answer.selectedOption]} {answer.selectedOption}
                         </p>
                       </motion.div>
                     )
                   })}
-                </div>
               </CardContent>
             </Card>
           </motion.div>
@@ -181,8 +179,9 @@ export default function Quiz() {
       
 
       {quizCompleted && (
-        <div className={styles.resultButtonContainer}>
+        <div className="flex justify-center">
           <Link 
+            className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium p-4 rounded hover:shadow-lg"
             href={{
               pathname: '/results',
               query: {
@@ -199,9 +198,7 @@ export default function Quiz() {
               }
             }}
           >
-            <button className={styles.resultButton}>
-              Get the Results
-            </button>
+            Get the Results
           </Link>
         </div>
       )}
