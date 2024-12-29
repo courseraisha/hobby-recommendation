@@ -81,7 +81,7 @@
 .questionText h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #8B1E3F;
+  color: #92143a;
 }
 
 .optionsGrid {
@@ -171,7 +171,7 @@
 
 .answerItem {
   background-color: white;
-  border: 2px solid #F7B2BD;
+  border: 2px solid #c84f63;
   border-radius: 0;
   padding: 1rem;
 }
@@ -225,8 +225,8 @@
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .quizContainer {
-    background-color: #1a1a1a;
-  }
+    background-color: #ffffff;
+  } 
 
   .sparkles {
     color: #F7B2BD;
@@ -241,7 +241,7 @@
 
   .questionCard,
   .resultsCard {
-    background-color: #2a2a2a;
+    background-color: #ffffff;
     border-color: #8B1E3F;
   }
 
