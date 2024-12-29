@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 
         <main className="flex-1">{children}</main>
 
-        <footer className="border-t bg-white/50 backdrop-blur-sm dark:bg-gray-950/50">
+        <footer className="border-t bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky bottom-0">
           <div className="container flex flex-col items-center gap-2 px-4 py-6 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between">
             <p>&copy; {new Date().getFullYear()} Hobby Recommendations. All rights reserved.</p>
             <p className="flex items-center gap-1">
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
                 href="https://www.linkedin.com/in/isha-singla16/" 
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="font-medium text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"
+                className="font-large text-[#8B1E3F] underline "
               >
                 Isha
               </Link>

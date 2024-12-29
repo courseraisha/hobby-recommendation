@@ -8,10 +8,10 @@ export default function Page() {
     <div className="relative min-h-screen overflow-hidden bg-[#E8F4F5]">
       {/* Decorative elements */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-[30rem] w-[30rem] rotate-12 transform bg-[#8B1E3F]/10" />
-        <div className="absolute right-0 top-20 h-[20rem] w-[20rem] -rotate-12 transform bg-[#E3425F]/10" />
+        <div className="absolute left-0 top-0 h-[30rem] w-[30rem] rotate-12 transform bg-[#8B1E3F]/20" />
+        <div className="absolute right-0 top-20 h-[20rem] w-[20rem] -rotate-12 transform bg-[#E3425F]/20" />
         <div className="absolute bottom-20 left-20 h-[25rem] w-[25rem] rotate-45 transform bg-[#F7B2BD]/20" />
-        <div className="absolute -right-20 bottom-0 h-[28rem] w-[28rem] -rotate-45 transform bg-[#FFDCE1]/30" />
+        <div className="absolute -right-20 bottom-0 h-[28rem] w-[28rem] -rotate-45 transform bg-[#FFDCE1]/20" />
       </div>
 
       <div className="container mx-auto flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center px-4 py-16">
@@ -29,7 +29,7 @@ export default function Page() {
             className="mt-4 bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white transition-all hover:shadow-lg"
           >
             <Link href="/quiz" className="inline-flex items-center gap-3">
-              Start Your Journey 
+              Find Yourself
               <ArrowRight className="h-5 w-5 transition-transform duration-300" />
             </Link>
           </Button>
