@@ -85,7 +85,7 @@ export default function Results() {
             </div>
             <div className="flex flex-wrap justify-center w-full max-w-4xl">
                 {matchedHobbies.map((hobby, index) => (
-                    <div key={index} className="bg-white shadow-md rounded-lg p-6 m-4 w-72">
+                    <div key={index} className="bg-white shadow-md rounded-lg p-6 m-4 w-96">
                         <h2 className="text-xl font-semibold mb-2">{hobby.name}</h2>
                         <p className="text-gray-700 mb-4">{hobby.description}</p>
                         <div className="mb-4">
