@@ -13,23 +13,20 @@ export default function RootLayout({ children }) {
     <html lang="en" className="min-h-full">
       <body className="flex min-h-screen flex-col">
         <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50">
-          <div className="container flex h-16 items-center justify-between px-4">
+          <div className=" flex h-16 items-center justify-between px-4">
             <Link 
               href="/" 
-              className="flex items-center gap-2 transition-colors hover:text-purple-600 dark:hover:text-purple-400"
+              className="font-bold text-[#8B1E3F] sm:text-xl flex"
             >
               <Sparkles className="h-5 w-5" />
-              <span className="font-semibold">Hobby Finder</span>
+              <span >Passion Explorer</span>
             </Link>
-            <nav>
-              <div className="p-4 border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <Link 
+            <nav><Link 
                   href="/quiz" 
-                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-purple-600 dark:hover:text-purple-400"
+                  className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium py-2 px-4 rounded hover:shadow-lg"
                 >
                   Take Quiz
                 </Link>
-              </div>
             </nav>
           </div>
         </header>
