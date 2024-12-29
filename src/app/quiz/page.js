@@ -185,7 +185,18 @@ export default function Quiz() {
           <Link 
             href={{
               pathname: '/results',
-              query: { answers: JSON.stringify(selectedAnswers) },
+              query: {
+                q1: selectedAnswers[0]?.selectedOption,
+                q2: selectedAnswers[1]?.selectedOption,
+                q3: selectedAnswers[2]?.selectedOption,
+                q4: selectedAnswers[3]?.selectedOption,
+                q5: selectedAnswers[4]?.selectedOption,
+                q6: selectedAnswers[5]?.selectedOption,
+                q7: selectedAnswers[6]?.selectedOption,
+                q8: selectedAnswers[7]?.selectedOption,
+                q9: selectedAnswers[8]?.selectedOption,
+                q10: selectedAnswers[9]?.selectedOption,
+              }
             }}
           >
             <button className={styles.resultButton}>
