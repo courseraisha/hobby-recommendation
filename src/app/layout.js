@@ -3,14 +3,18 @@ import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 
 export const metadata = {
-  title: 'Hobby Recommendations',
+  title: 'Passion Explorer',
   description: 'Discover your perfect hobby through our personalized quiz!',
   keywords: 'hobbies, interests, quiz, personality, activities, recommendations',
+  
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="min-h-full">
+       <head>
+       <link rel="icon" type="image/png" href='icon.png'/>
+       </head>
       <body className="flex min-h-screen flex-col">
         <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky top-0">
           <div className=" flex h-16 items-center justify-between px-4">
