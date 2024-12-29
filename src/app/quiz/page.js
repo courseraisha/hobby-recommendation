@@ -127,8 +127,8 @@ export default function Quiz() {
                         <motion.button
                           key={option}
                           onClick={() => handleAnswer(option)}
-                          className={`${styles.optionButton} ${
-                            index === 0 ? styles.optionFirst : styles.optionSecond
+                          className={`flex flex-col items-center p-2 border-2 rounded-none cursor-pointer transition-all duration-300 ${
+                            index === 0 ? 'border-[#8B1E3F] text-[#8B1E3F] hover:bg-[#FFDCE1]' : 'border-[#E3425F] text-[#E3425F] hover:bg-[#F7B2BD]'
                           }`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}

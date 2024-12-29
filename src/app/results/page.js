@@ -85,7 +85,7 @@ export default function Results() {
             </div>
             <div className="flex flex-wrap justify-center w-full max-w-4xl">
                 {matchedHobbies.map((hobby, index) => (
-                    <div key={index} className="bg-white shadow-md rounded-lg p-6 m-4 w-96">
+                    <div key={index} className="bg-white shadow-md rounded-lg p-6 m-4 w-96 border border-[#FFDCE1]">
                         <h2 className="text-xl font-semibold mb-2">{hobby.name}</h2>
                         <p className="text-gray-700 mb-4">{hobby.description}</p>
                         <div className="mb-4">
@@ -103,10 +103,10 @@ export default function Results() {
                             {hobby.tags.map((tag, tagIndex) => (
                                 <span 
                                     key={tagIndex} 
-                                    className={`inline-block bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-sm mr-2 mb-2 ${
+                                    className={`inline-block  rounded-full px-3 py-1 text-sm mr-2 mb-2 ${
                                         tag === searchParams.get(`q${tagIndex + 1}`) 
-                                            ? 'bg-[#8B1E3F] text-white' 
-                                            : ''
+                                            ? 'bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white'
+                                            : 'bg-gray-200 text-gray-700'
                                     }`}
                                 >
                                     {tag}
