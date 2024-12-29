@@ -1,18 +1,21 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import hobbies from '../../../data/hobbies';
 import Link from 'next/link';
 
 export default function Results() {
-    const searchParams = useSearchParams();
+    const router = useRouter();
     const [matchedHobbies, setMatchedHobbies] = useState([]);
 
     useEffect(() => {
+        // Get the current URL search params
+        const urlParams = new URLSearchParams(window.location.search);
+        
         // Get user's answers from URL parameters
         const userAnswers = Array.from({ length: 10 }, (_, i) => 
-            searchParams.get(`q${i + 1}`)
+            urlParams.get(`q${i + 1}`)
         );
 
         // Debug: Log the user answers
@@ -46,7 +49,7 @@ export default function Results() {
             .slice(0, 2);
 
         setMatchedHobbies(topMatches);
-    }, [searchParams]);
+    }, []);
 
     // Show message if no matches found
     if (matchedHobbies.length === 0) {
@@ -94,18 +97,21 @@ export default function Results() {
                                 </p>
                             </div>
                             <div className="flex flex-wrap">
-                                {hobby.tags.map((tag, tagIndex) => (
-                                    <span 
-                                        key={tagIndex} 
-                                        className={`inline-block rounded-full px-3 py-1 text-sm mr-2 mb-2 ${
-                                            tag === searchParams.get(`q${tagIndex + 1}`) 
-                                                ? 'bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white'
-                                                : 'bg-gray-200 text-gray-700'
-                                        }`}
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
+                                {hobby.tags.map((tag, tagIndex) => {
+                                    const paramValue = new URLSearchParams(window.location.search).get(`q${tagIndex + 1}`);
+                                    return (
+                                        <span 
+                                            key={tagIndex} 
+                                            className={`inline-block rounded-full px-3 py-1 text-sm mr-2 mb-2 ${
+                                                tag === paramValue
+                                                    ? 'bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white'
+                                                    : 'bg-gray-200 text-gray-700'
+                                            }`}
+                                        >
+                                            {tag}
+                                        </span>
+                                    );
+                                })}
                             </div>
                         </div>
                     ))}
