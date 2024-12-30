@@ -1,1008 +1,428 @@
 const hobbies = [
     {
         name: "Board Games",
-        description: "Playing games with boards and pieces.",
-        tags: ["Indoor",      // Q1: Indoor/Outdoor
-               "Analytical",   // Q2: Creative/Analytical
-               "Relaxed",     // Q3: Active/Relaxed
-               "Group",       // Q4: Solo/Group
-               "Short-Term",  // Q5: Short-Term/Long-Term
-               "Digital",     // Q6: Crafting/Digital
-               "Collaborative", // Q7: Competitive/Collaborative
-               "Technology",  // Q8: Nature/Technology
-               "Low-Cost",    // Q9: Low-Cost/High-Cost
-               "New People"]  // Q10: New People/Familiar Faces
+        description: "A social indoor activity combining strategic thinking and problem-solving in a relaxed group setting. Minimal equipment costs and flexible time commitment make it ideal for meeting new people through gaming groups and cafes.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Group", "Short-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
     },
     {
         name: "Video Gaming",
-        description: "Playing interactive games on a console or computer.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
+        description: "Digital entertainment combining creative storytelling with interactive challenges. Perfect for solo players seeking indoor recreation with flexible time commitment and online social connections with familiar friends.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Digital", "Competitive", "Technology", "Low-Cost", "Familiar Faces"]
     },
     {
         name: "Table Tennis",
-        description: "Playing ping pong with a small ball and paddles.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6: Changed from Digital
-               "Competitive", // Q7
-               "Nature",      // Q8: Changed from Technology
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Fast-paced indoor sport combining hand-eye coordination with tactical thinking. Excellent for active group exercise in short sessions while meeting new people in community settings.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Crafting", "Competitive", "Nature", "Low-Cost", "New People"]
     },
     {
         name: "Football",
-        description: "A team sport played with a ball and goals.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6: Changed from Digital to Crafting as it's physical
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9: Changed from High-Cost as basic equipment is affordable
-               "New People"]  // Q10
+        description: "Dynamic outdoor team sport blending strategy with physical activity. Emphasizes group competition and fitness with minimal equipment needs, perfect for joining local teams and meeting new players.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Crafting", "Competitive", "Nature", "Low-Cost", "New People"]
     },
     {
         name: "Basketball",
-        description: "A team sport where players shoot a ball through a hoop.",
-        tags: ["Indoor",      // Q1: Can be both, but primarily indoor
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6: Changed from Digital to Crafting
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9: Basic equipment is affordable
-               "New People"]  // Q10
+        description: "Indoor team sport requiring strategic play and constant movement. Combines analytical thinking with physical agility, offering competitive group dynamics and easy access to new social connections.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Crafting", "Competitive", "Nature", "Low-Cost", "New People"]
     },
     {
         name: "Baseball",
-        description: "A team sport involving a bat, ball, and bases.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6: Changed from Digital
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9: Basic participation is affordable
-               "New People"]  // Q10
+        description: "Traditional outdoor team sport mixing strategy with physical skill. Emphasizes analytical thinking in a competitive group environment, providing accessible entry for meeting new teammates.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Crafting", "Competitive", "Nature", "Low-Cost", "New People"]
     },
     {
         name: "Golf",
-        description: "A game of hitting a small ball into holes using clubs.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
+        description: "Precision outdoor sport requiring analytical focus and technical skill. Offers relaxed, individual play with opportunities to meet new people, though equipment costs are significant.",
+        tags: ["Outdoor", "Analytical", "Relaxed", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
     },
     {
         name: "Bowling",
-        description: "Rolling a ball to knock down pins.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6: Changed from Digital
-               "Competitive", // Q7
-               "Nature",      // Q8: Changed from Technology
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Indoor precision sport combining physical technique with strategic thinking. Perfect for group entertainment with competitive elements, while maintaining accessibility for newcomers.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Crafting", "Competitive", "Nature", "Low-Cost", "New People"]
     },
     {
         name: "Photography",
-        description: "Capturing moments through a camera.",
-        tags: ["Outdoor",     // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
+        description: "Creative outdoor pursuit capturing moments through digital technology. Requires significant equipment investment and long-term skill development, while offering opportunities to connect with other enthusiasts.",
+        tags: ["Outdoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
     },
     {
         name: "Gardening",
-        description: "Cultivating plants and flowers.",
-        tags: ["Outdoor",     // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
+        description: "Hands-on outdoor activity blending creative design with nature connection. Offers long-term project satisfaction with minimal initial costs, typically shared with close friends and family.",
+        tags: ["Outdoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
     },
     {
         name: "Reading",
-        description: "Exploring stories and knowledge in books.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
+        description: "Relaxing indoor activity exploring diverse content through digital or physical books. Perfect for solo enjoyment with minimal costs and long-term educational benefits.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "Familiar Faces"]
     },
     {
         name: "Geocaching",
-        description: "Using GPS to hide and seek treasure.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Technology-driven outdoor treasure hunting combining exploration with problem-solving. Perfect for meeting new people while engaging in short-term adventures using digital tools.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
     },
     {
         name: "Camping",
-        description: "Staying outdoors in a tent or shelter for recreation.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Outdoor recreational activity emphasizing nature connection and practical skills. Combines group collaboration with physical activity, ideal for building relationships through shared adventures.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
     },
     {
         name: "Journaling",
-        description: "Writing down thoughts and experiences in a journal.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
+        description: "Reflective indoor writing practice focusing on personal expression and creativity. Offers long-term emotional benefits through solo crafting, typically shared with close confidants.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
     },
     {
         name: "Podcasting",
-        description: "Creating and sharing audio content.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Digital content creation combining creative expression with technical skills. Requires minimal initial investment while offering opportunities to connect with diverse audiences online.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
     },
     {
         name: "Blogging",
-        description: "Writing articles or content for a blog.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Digital writing platform combining creative expression with online community building. Offers long-term development opportunities with low entry costs and potential for wide audience reach.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
     },
     {
         name: "Woodworking",
-        description: "Creating objects and furniture using wood.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "Familiar Faces"] // Q10
+        description: "Creative crafting practice requiring precision and artistic vision. Involves significant tool investment and long-term skill development, typically enjoyed individually or with fellow enthusiasts.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
     },
     {
         name: "Playing Chess",
-        description: "A strategy game played on a board with pieces.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
+        description: "Strategic indoor board game emphasizing analytical thinking and tactical planning. Offers both digital and physical play options with opportunities to meet new opponents.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Group", "Short-Term", "Digital", "Competitive", "Technology", "Low-Cost", "New People"]
     },
     {
         name: "Making Jewelry",
-        description: "Designing and crafting wearable art.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "Familiar Faces"] // Q10
+        description: "Detailed crafting activity combining artistic design with technical skill. Requires investment in materials while offering creative satisfaction through long-term skill development.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
     },
     {
         name: "Tae Kwon Do",
-        description: "A Korean martial art focusing on high, fast kicks.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Salsa Dancing",
-        description: "A fast-paced Latin dance style.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Rock Music",
-        description: "Listening to or playing rock music.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Hip-Hop Dancing",
-        description: "A dance style focused on rhythm and movement.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Cycling",
-        description: "Riding bicycles as a form of transport or leisure.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Zumba",
-        description: "A dance-based exercise program.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Learning a Language",
-        description: "Studying a new language for communication or travel.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Boxing",
-        description: "A combat sport using punches with gloves.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Archery",
-        description: "Shooting arrows at targets using a bow.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Snowboarding",
-        description: "Gliding down snow-covered slopes on a board.",
-        tags: ["Outdoor",     // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Volleyball",
-        description: "A team sport where players hit a ball over a net.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Sailing",
-        description: "Operating a boat using wind power.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Motorcycling",
-        description: "Riding a motorcycle for leisure or sport.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Videography",
-        description: "Recording video footage for creative or professional purposes.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Scrapbooking",
-        description: "Creating personalized photo albums and memories.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Sculpting",
-        description: "Shaping materials into artistic creations.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Tennis",
-        description: "A racquet sport played on a rectangular court.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Painting",
-        description: "Creating art using paint and canvas.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Yoga",
-        description: "Physical and mental exercises for wellness.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Bird Watching",
-        description: "Observing and identifying different bird species.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Pottery",
-        description: "Creating objects from clay.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Astronomy",
-        description: "Studying celestial objects and phenomena.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Cooking",
-        description: "Preparing and experimenting with different foods.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Baking",
-        description: "Making breads, pastries, and desserts.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Knitting",
-        description: "Creating garments and items using yarn and needles.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Cross-stitch",
-        description: "Creating decorative designs using thread and fabric.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Model Building",
-        description: "Assembling scale models of vehicles or buildings.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "High-Cost",   // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Drone Flying",
-        description: "Operating and flying remote-controlled drones.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Short-Term",  // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Technology",  // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Rock Climbing",
-        description: "Climbing natural rock formations or artificial walls.",
-        tags: ["Outdoor",     // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Group",       // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Swimming",
-        description: "Moving through water for exercise or recreation.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Active",      // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Competitive", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Meditation",
-        description: "Practicing mindfulness and mental clarity.",
-        tags: ["Indoor",      // Q1
-               "Creative",    // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Crafting",    // Q6
-               "Collaborative", // Q7
-               "Nature",      // Q8
-               "Low-Cost",    // Q9
-               "Familiar Faces"] // Q10
-    },
-    {
-        name: "Coin Collecting",
-        description: "Collecting and studying different currencies.",
-        tags: ["Indoor",      // Q1
-               "Analytical",  // Q2
-               "Relaxed",     // Q3
-               "Solo",        // Q4
-               "Long-Term",   // Q5
-               "Digital",     // Q6
-               "Collaborative", // Q7
-               "Technology",  // Q8
-               "High-Cost",   // Q9
-               "New People"]  // Q10
-    },
-    {
-        name: "Piano Playing",
-        description: "Learning and performing music on piano.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Ballet",
-        description: "Classical dance form requiring precision and grace.",
-        tags: ["Indoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Soap Making",
-        description: "Creating handmade soaps using natural ingredients.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Candle Making",
-        description: "Crafting decorative and scented candles.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Ultimate Frisbee",
-        description: "Team sport played with a flying disc.",
-        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "3D Printing",
-        description: "Creating objects using additive manufacturing.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Beekeeping",
-        description: "Maintaining bee colonies for honey production.",
-        tags: ["Outdoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Origami",
-        description: "Japanese art of paper folding.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Martial Arts",
-        description: "Traditional combat practices for self-defense.",
+        description: "Disciplined martial art combining physical training with mental focus. Requires long-term commitment and regular group practice, offering opportunities for competitive advancement.",
         tags: ["Indoor", "Analytical", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
     },
     {
-        name: "DJing",
-        description: "Mixing and playing recorded music.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
+        name: "Salsa Dancing",
+        description: "Energetic partner dance combining rhythm with social interaction. Perfect for meeting new people while developing long-term physical skills in a collaborative environment.",
+        tags: ["Indoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
     },
     {
-        name: "Glass Blowing",
-        description: "Shaping molten glass into artistic pieces.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Stand-up Comedy",
-        description: "Performing comedy routines live.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Competitive", "Technology", "Low-Cost", "New People"]
-    },
-    {
-        name: "Surfing",
-        description: "Riding ocean waves on a board.",
-        tags: ["Outdoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Bookbinding",
-        description: "Creating and repairing books by hand.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Ice Skating",
-        description: "Gliding on ice using skates.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Aquascaping",
-        description: "Creating underwater landscapes in aquariums.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Calligraphy",
-        description: "Artistic handwriting and lettering.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Bonsai",
-        description: "Growing and training miniature trees.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Parkour",
-        description: "Moving efficiently through urban environments.",
-        tags: ["Outdoor", "Creative", "Active", "Group", "Long-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "Wine Tasting",
-        description: "Sampling and evaluating different wines.",
-        tags: ["Indoor", "Analytical", "Relaxed", "Group", "Long-Term", "Digital", "Collaborative", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Robotics",
-        description: "Building and programming robots.",
-        tags: ["Indoor", "Analytical", "Active", "Solo", "Long-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Improv Theater",
-        description: "Performing unscripted theatrical scenes.",
-        tags: ["Indoor", "Creative", "Active", "Group", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "Kayaking",
-        description: "Paddling small boats through water.",
-        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Terrarium Making",
-        description: "Creating miniature gardens in containers.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Laser Cutting",
-        description: "Creating designs using laser technology.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Historical Reenactment",
-        description: "Recreating historical events and periods.",
-        tags: ["Outdoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Axe Throwing",
-        description: "Throwing axes at wooden targets.",
-        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "Hydroponics",
-        description: "Growing plants without soil.",
-        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Escape Room Design",
-        description: "Creating puzzle-based room experiences.",
+        name: "Rock Music",
+        description: "Creative musical expression combining instrumental skill with group dynamics. Requires equipment investment and long-term practice, offering opportunities for public performance.",
         tags: ["Indoor", "Creative", "Active", "Group", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
     },
     {
-        name: "Fencing",
-        description: "Competitive sword fighting sport.",
-        tags: ["Indoor", "Analytical", "Active", "Group", "Long-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
+        name: "Hip-Hop Dancing",
+        description: "Dynamic dance style emphasizing individual expression and group energy. Combines physical training with creative movement, perfect for building new social connections.",
+        tags: ["Indoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Collaborative", "Technology", "Low-Cost", "New People"]
     },
     {
-        name: "Voice Acting",
-        description: "Performing character voices for media.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Foraging",
-        description: "Gathering wild food and materials.",
-        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "Puzzle Making",
-        description: "Creating custom jigsaw puzzles.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Technology", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Drone Racing",
-        description: "Racing remote-controlled aircraft.",
-        tags: ["Outdoor", "Analytical", "Active", "Group", "Long-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Stop Motion Animation",
-        description: "Creating animations frame by frame.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Urban Sketching",
-        description: "Drawing city scenes and landscapes.",
-        tags: ["Outdoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "Fire Dancing",
-        description: "Performing dance with fire props.",
-        tags: ["Outdoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Mushroom Cultivation",
-        description: "Growing edible and medicinal fungi.",
-        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Ice Hockey",
-        description: "Team sport played on ice.",
-        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Macro Photography",
-        description: "Taking extreme close-up photos.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Virtual Reality Gaming",
-        description: "Playing immersive digital games.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Circus Arts",
-        description: "Performing acrobatic and aerial acts.",
-        tags: ["Indoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Metal Detecting",
-        description: "Searching for buried artifacts.",
-        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Collaborative", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Leather Crafting",
-        description: "Creating items from leather.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Radio Control Cars",
-        description: "Operating miniature racing vehicles.",
-        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Cheese Making",
-        description: "Producing homemade cheeses.",
-        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Ghost Hunting",
-        description: "Investigating paranormal activity.",
-        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Paper Quilling",
-        description: "Creating designs with rolled paper.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Falconry",
-        description: "Training and hunting with birds of prey.",
-        tags: ["Outdoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
-    },
-    {
-        name: "Mathematical Origami",
-        description: "Creating geometric paper designs.",
-        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Technology", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Digital Art",
-        description: "Creating artwork using digital tools.",
-        tags: ["Indoor",      // Q1: Always indoor activity
-               "Creative",    // Q2: Highly creative
-               "Relaxed",     // Q3: Generally relaxed pace
-               "Solo",        // Q4: Primarily solo activity
-               "Long-Term",   // Q5: Takes time to master
-               "Digital",     // Q6: Definitely digital
-               "Collaborative", // Q7: Can be both, but more collaborative
-               "Technology",  // Q8: Heavily technology-based
-               "High-Cost",   // Q9: Requires expensive software/hardware
-               "New People"]  // Q10: Can connect with new people online
-    },
-    {
-        name: "Cosplay",
-        description: "Creating and wearing character costumes.",
-        tags: ["Indoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Collaborative", "Technology", "High-Cost", "New People"]
-    },
-    {
-        name: "Rugby",
-        description: "Full-contact team sport.",
-        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
-    },
-    {
-        name: "Soap Carving",
-        description: "Creating sculptures from soap.",
-        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
-    },
-    {
-        name: "Mountain Biking",
-        description: "Cycling on rough terrain.",
+        name: "Cycling",
+        description: "Road and leisure cycling focusing on fitness and transportation. Combines cardio exercise with practical commuting and scenic route exploration.",
         tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
     },
     {
-        name: "Microscopy",
-        description: "Studying tiny objects with microscopes.",
+        name: "Zumba",
+        description: "High-energy dance fitness program combining choreography with aerobic exercise. Perfect for group participation and meeting new people with minimal equipment needs.",
+        tags: ["Indoor", "Creative", "Active", "Group", "Short-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
+    },
+    {
+        name: "Learning a Language",
+        description: "Analytical skill development combining digital tools with practical application. Offers long-term cognitive benefits and opportunities for cultural exchange.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
+    },
+    {
+        name: "Boxing",
+        description: "Intense combat sport combining physical conditioning with strategic thinking. Requires long-term commitment and regular training, offering both competitive and fitness benefits.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Archery",
+        description: "Precision target sport requiring focus and technical mastery. Combines outdoor activity with individual skill development, suitable for both competition and recreation.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Snowboarding",
+        description: "Dynamic winter sport combining physical skill with creative expression. Requires significant equipment investment while offering opportunities for both individual and group enjoyment.",
+        tags: ["Outdoor", "Creative", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Volleyball",
+        description: "Team-based outdoor sport emphasizing coordination and strategy. Perfect for group competition and social interaction with minimal equipment requirements.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Sailing",
+        description: "Technical water sport combining navigation skills with nature appreciation. Requires significant investment and long-term learning, while offering both competitive and leisure opportunities.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Motorcycling",
+        description: "Dynamic outdoor activity combining mechanical knowledge with adventure. Requires significant investment in equipment while offering both solo exploration and community connection.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Videography",
+        description: "Creative digital storytelling combining technical skill with artistic vision. Requires equipment investment and offers opportunities for both individual expression and collaborative projects.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Scrapbooking",
+        description: "Creative memory preservation combining crafting with personal expression. Perfect for solo artistic development with minimal initial costs, often shared with close friends.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Sculpting",
+        description: "Three-dimensional art form combining creative vision with technical skill. Requires long-term dedication and material investment, typically practiced individually.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Tennis",
+        description: "Dynamic racquet sport combining physical agility with strategic play. Requires equipment investment while offering both competitive matches and social interaction.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Painting",
+        description: "Visual art practice combining color theory with creative expression. Requires ongoing material investment and offers long-term artistic development opportunities.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Yoga",
+        description: "Mindful movement practice combining physical postures with breathing techniques. Offers group instruction with personal development focus and minimal equipment needs.",
+        tags: ["Indoor", "Creative", "Relaxed", "Group", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Bird Watching",
+        description: "Nature observation combining wildlife identification with outdoor exploration. Requires minimal initial investment while offering both solo and group participation opportunities.",
+        tags: ["Outdoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Pottery",
+        description: "Tactile art form combining hand skills with creative design. Requires dedicated space and equipment investment while offering opportunities for artistic community engagement.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Astronomy",
+        description: "Scientific hobby combining celestial observation with technical knowledge. Requires equipment investment and offers opportunities for both individual study and community sharing.",
+        tags: ["Outdoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Cooking",
+        description: "Culinary art combining technical skill with creative expression. Requires ongoing ingredient investment while offering opportunities for both personal enjoyment and social sharing.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Baking",
+        description: "Creating pastries, cakes, and desserts with precise measurements and decorative techniques. Perfect for sharing sweet creations with others.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Bread Making",
+        description: "Artisanal bread crafting focusing on fermentation, dough development, and traditional baking methods. Explores different grains and techniques.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Knitting",
+        description: "Traditional fiber art combining pattern work with creative design. Offers long-term skill development with minimal initial costs, typically enjoyed individually.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Opera Singing",
+        description: "Classical vocal art combining musical technique with theatrical performance. Requires long-term training and offers opportunities for both solo and ensemble performances.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Surfing",
+        description: "Dynamic water sport blending physical skill with nature connection. Requires equipment investment while offering both solo practice and community engagement.",
+        tags: ["Outdoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "3D Printing",
+        description: "Modern making technology combining digital design with physical creation. Requires initial equipment investment and technical knowledge while offering creative possibilities.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Rock Climbing",
+        description: "Physical challenge sport combining strength with problem-solving. Offers both indoor and outdoor opportunities with equipment needs and safety considerations.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Origami",
+        description: "Paper folding art combining precision with geometric understanding. Minimal material costs while offering long-term skill development opportunities.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Beekeeping",
+        description: "Nature stewardship combining biological knowledge with hands-on care. Requires equipment investment and ongoing commitment while supporting environmental awareness.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Calligraphy",
+        description: "Artistic writing practice combining traditional techniques with creative expression. Minimal initial investment with opportunities for long-term skill refinement.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Drone Flying",
+        description: "Modern aerial photography combining technology with outdoor exploration. Requires significant equipment investment while offering both recreational and professional opportunities.",
+        tags: ["Outdoor", "Analytical", "Relaxed", "Solo", "Short-Term", "Digital", "Competitive", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Wine Tasting",
+        description: "Developing palate sensitivity through sampling and analyzing different wines. Focus on variety identification, regional characteristics, and food pairing.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Group", "Long-Term", "Digital", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Wine Making",
+        description: "Home production of wines through fermentation and aging processes. Involves selecting grapes, monitoring fermentation, and understanding wine chemistry.",
+        tags: ["Indoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Martial Arts",
+        description: "Traditional combat training combining physical discipline with mental focus. Requires long-term commitment while offering both fitness and self-defense benefits.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Aquarium Keeping",
+        description: "Aquatic hobby combining biological knowledge with aesthetic design. Requires initial setup investment while offering long-term care satisfaction.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Stamp Collecting",
+        description: "Historical preservation hobby combining research with organization. Moderate ongoing investment while offering connection to global culture.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Parkour",
+        description: "Urban movement discipline combining athleticism with creative navigation. Minimal equipment needs while offering both physical challenge and community connection.",
+        tags: ["Outdoor", "Creative", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Soap Making",
+        description: "Chemical crafting hobby combining science with artistic presentation. Moderate material investment while offering practical and creative satisfaction.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Meditation",
+        description: "Mental wellness practice combining mindfulness with relaxation techniques. Minimal equipment needs while offering long-term personal development benefits.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Film Analysis",
+        description: "Critical appreciation hobby combining storytelling study with cultural understanding. Minimal investment while offering both solo and group discussion opportunities.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "Low-Cost", "New People"]
+    },
+    {
+        name: "Urban Sketching",
+        description: "Outdoor art practice combining observation with quick drawing techniques. Minimal material needs while offering both solo practice and group meetups.",
+        tags: ["Outdoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Magic Tricks",
+        description: "Performance art combining sleight of hand with showmanship. Moderate equipment investment while offering both practice and entertainment opportunities.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Technology", "Low-Cost", "New People"]
+    },
+    {
+        name: "Cross-Country Skiing",
+        description: "Winter endurance sport combining outdoor exploration with physical fitness. Requires equipment investment while offering both solo and group activities.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Composting",
+        description: "Environmental practice combining organic waste management with gardening benefits. Minimal setup costs while offering ongoing environmental impact.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Voice Acting",
+        description: "Performance art combining vocal skills with character interpretation. Requires equipment investment while offering both creative and professional opportunities.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Tai Chi",
+        description: "Meditative movement practice combining gentle exercise with mental focus. Minimal equipment needs while offering both health and social benefits.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Group", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Coin Collecting",
+        description: "Numismatic hobby combining historical research with preservation. Ongoing investment while offering both educational and collection value.",
         tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Digital", "Collaborative", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Stand-up Comedy",
+        description: "Performance art combining writing with public speaking. Minimal initial investment while offering both creative and social opportunities.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Digital", "Competitive", "Technology", "Low-Cost", "New People"]
+    },
+    {
+        name: "Terrarium Building",
+        description: "Mini ecosystem creation combining plant care with artistic design. Moderate setup costs while offering long-term maintenance satisfaction.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Short-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Badminton",
+        description: "Racquet sport combining agility with strategic play. Minimal equipment needs while offering both casual and competitive opportunities.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Short-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Improv Theater",
+        description: "Spontaneous performance art combining quick thinking with teamwork. Minimal equipment needs while offering both skill development and social connection.",
+        tags: ["Indoor", "Creative", "Active", "Group", "Short-Term", "Crafting", "Collaborative", "Technology", "Low-Cost", "New People"]
+    },
+    {
+        name: "Mountain Biking",
+        description: "Challenging off-road cycling combining trail navigation with technical riding skills. Requires specialized equipment for rough terrain adventures and obstacle management.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Costume Design",
+        description: "Creative craft combining sewing skills with character interpretation. Requires material investment while offering both practical and artistic satisfaction.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Rowing",
+        description: "Water sport combining physical endurance with technical precision. Requires equipment access while offering both team and individual options.",
+        tags: ["Outdoor", "Analytical", "Active", "Group", "Long-Term", "Digital", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Bonsai",
+        description: "Plant cultivation art combining patience with aesthetic vision. Requires long-term commitment while offering meditative practice and artistic expression.",
+        tags: ["Indoor", "Creative", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Herbal Medicine",
+        description: "Traditional wellness practice combining botanical knowledge with healing arts. Moderate material investment while offering both learning and practical benefits.",
+        tags: ["Indoor", "Analytical", "Relaxed", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Pet Training",
+        description: "Animal behavior practice combining psychology with patience. Ongoing investment while offering both skill development and emotional connection.",
+        tags: ["Indoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Fencing",
+        description: "Traditional combat sport combining strategy with physical agility. Requires equipment investment while offering both competitive and social opportunities.",
+        tags: ["Indoor", "Analytical", "Active", "Group", "Long-Term", "Crafting", "Competitive", "Technology", "High-Cost", "New People"]
+    },
+    {
+        name: "Glass Blowing",
+        description: "Hot glass art combining technical skill with creative vision. Requires specialized equipment access while offering unique artistic possibilities.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Orienteering",
+        description: "Navigation sport combining map reading with outdoor exploration. Minimal equipment needs while offering both solo and group challenges.",
+        tags: ["Outdoor", "Analytical", "Active", "Solo", "Short-Term", "Digital", "Competitive", "Nature", "Low-Cost", "New People"]
+    },
+    {
+        name: "Puppet Making",
+        description: "Creative craft combining sculpture with performance art. Moderate material costs while offering both construction and entertainment possibilities.",
+        tags: ["Indoor", "Creative", "Active", "Solo", "Short-Term", "Crafting", "Collaborative", "Technology", "Low-Cost", "Familiar Faces"]
+    },
+    {
+        name: "Fire Dancing",
+        description: "Performance art combining movement with prop manipulation. Requires safety equipment while offering both practice and performance opportunities.",
+        tags: ["Outdoor", "Creative", "Active", "Solo", "Long-Term", "Crafting", "Competitive", "Nature", "High-Cost", "New People"]
+    },
+    {
+        name: "Cheese Making",
+        description: "Culinary craft combining chemistry with aging processes. Requires initial equipment investment while offering both learning and tasting satisfaction.",
+        tags: ["Indoor", "Analytical", "Active", "Solo", "Long-Term", "Crafting", "Collaborative", "Nature", "High-Cost", "Familiar Faces"]
     }
-];
-
-export default hobbies; 
-  
+]
+ export default hobbies;

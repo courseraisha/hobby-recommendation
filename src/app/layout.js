@@ -5,7 +5,7 @@ import { Sparkles } from 'lucide-react'
 export const metadata = {
   title: 'Passion Explorer',
   description: 'Discover your perfect hobby through our personalized quiz!',
-  keywords: 'hobbies, interests, quiz, personality, activities, recommendations',
+  keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,passion explorer',
   
 }
 
