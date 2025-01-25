@@ -145,8 +145,9 @@ function ResultsContent() {
                 </div>
                 {/* Shareable Link Section */}
                 <div className="mt-6">
-                    <p className="text-lg mb-2">Share your results with friends:</p>
-                    <input 
+  <p className="text-xl font-bold text-center mb-2">
+    🎉 Share your results with friends 🚀
+  </p>                    <input 
                         type="text" 
                         value={shareableLink} 
                         readOnly 
