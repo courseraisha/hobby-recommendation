@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 
 export const metadata = {
-  title: 'Passion Explorer',
+  title: 'Hobby Connectr',
   description: 'Discover your perfect hobby through our personalized quiz!',
-  keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,passion explorer',
+  keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,Hobby Connectr',
   
 }
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
               className="font-bold text-[#8B1E3F] sm:text-xl flex"
             >
               <Sparkles className="h-5 w-5" />
-              <span >Passion Explorer</span>
+              <span >Hobby Connectr</span>
             </Link>
             <nav><Link 
                   href="/quiz" 
