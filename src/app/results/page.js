@@ -34,7 +34,13 @@ function ResultsContent() {
       .sort((a, b) => b.matchCount - a.matchCount)
       .slice(0, 2)
 
-    setMatchedHobbies(topMatches)
+    // If no matches found, randomly select two hobbies
+    if (topMatches.length === 0) {
+      const randomHobbies = hobbies.sort(() => 0.5 - Math.random()).slice(0, 2)
+      setMatchedHobbies(randomHobbies)
+    } else {
+      setMatchedHobbies(topMatches)
+    }
 
     const baseUrl = window.location.origin + "/results"
     const params = new URLSearchParams()
@@ -44,25 +50,6 @@ function ResultsContent() {
     setShareableLink(`${baseUrl}?${params.toString()}`)
   }, [])
 
-  if (matchedHobbies.length === 0) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#8B1E3F]/5 to-white p-6">
-        <div className="bg-white rounded-lg shadow-xl p-8 text-center max-w-md">
-          <h1 className="text-3xl font-bold mb-4 text-[#8B1E3F]">No Matching Hobbies Found</h1>
-          <p className="mb-6 text-gray-600">
-            Don't worry! Everyone's unique. Try adjusting your preferences to find better matches.
-          </p>
-          <Link
-            className="inline-flex items-center justify-center bg-[#8B1E3F] text-white font-medium px-6 py-3 rounded-full hover:bg-[#7A1A37] transition duration-300 ease-in-out transform hover:scale-105"
-            href="/quiz"
-          >
-            <RefreshCw className="mr-2 h-5 w-5" />
-            Take the Quiz Again
-          </Link>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

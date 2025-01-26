@@ -40,7 +40,7 @@ export default function Page() {
           <Card className="group relative overflow-hidden border-2 border-[#8B1E3F]/20 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#8B1E3F] hover:shadow-lg">
             <CardContent className="flex flex-col items-center p-8">
               <Compass className="h-8 w-8 text-[#8B1E3F]" />
-              <h2 className="mb-3 text-xl font-semibold text-[#8B1E3F]">Personalized Discovery</h2>
+              <h2 className="mb-3 text-xl text-center font-semibold text-[#8B1E3F]">Personalized Discovery</h2>
               <p className="text-center text-sm leading-relaxed text-[#E3425F]">
                 Find activities that align perfectly with your lifestyle and interests.
               </p>
