@@ -43,8 +43,8 @@ export default function Quiz() {
 
 
   useEffect(() => {
-    const duration = 5000 // 5 seconds
-    const interval = 10 // Update every 10ms
+    const duration = 10000 // 5 seconds
+    const interval = 25 // Update every 10ms
     const step = (100 * interval) / duration
 
     const timer = setInterval(() => {
