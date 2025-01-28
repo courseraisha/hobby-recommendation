@@ -2,11 +2,8 @@ import './globals.css'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import Head from 'next/head'
-
-const favicon = '/favicon.ico'
-
 export const metadata = {
-  image: favicon,
+  image: 'logo.png',
   title: {
     default: 'Hobby Connectr',
     template: '%s | Hobby Connectr',
@@ -20,14 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="logo.png" />
         <title>Hobby Connectr</title>
         <meta name="Hobby Connectr" content="Discover your perfect hobby through our personalized quiz!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <html lang="en" className="min-h-full">
          <head>
-         <link rel="icon" type="image/x-icon" href={favicon} />
+         <link rel="icon" type="image/x-icon" href="logo.png" />
          </head>
         <body className="flex min-h-screen flex-col">
           <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky top-0">
