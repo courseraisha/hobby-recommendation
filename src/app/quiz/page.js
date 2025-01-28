@@ -8,8 +8,7 @@ import { Sparkles } from 'lucide-react'
 import { questions } from "../../../data/questions"
 import styles from './quiz.module.css'
 import Link from 'next/link'
-import { hobbies } from '../../../data/hobbies'; // Adjust the path as necessary
-
+import { Button } from "@/components/ui/button"
 
 const emojis = {
   Indoor: "🏠",
