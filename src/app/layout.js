@@ -6,7 +6,10 @@ const favicon = '/favicon.ico'
 
 export const metadata = {
   image: favicon,
-  title: 'Hobby Connectr',
+  title: {
+    default: 'Hobby Connectr',
+    template: '%s | Hobby Connectr',
+  },
   description: 'Discover your perfect hobby through our personalized quiz!',
   keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,Hobby Connectr',
   
