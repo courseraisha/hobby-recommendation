@@ -1,6 +1,7 @@
 import './globals.css'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
+
 const favicon = '/favicon.ico'
 
 export const metadata = {
@@ -15,8 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="min-h-full">
        <head>
-       <link rel="hobbyconnectr" type="image/png" href='icon.png'/>
-       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+       <link rel="icon" type="image/x-icon" href={favicon} />
        </head>
       <body className="flex min-h-screen flex-col">
         <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky top-0">
