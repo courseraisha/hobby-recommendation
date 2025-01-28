@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import favicon from '/src/favicon.ico'
 export const metadata = {
+  image: favicon,
   title: 'Hobby Connectr',
   description: 'Discover your perfect hobby through our personalized quiz!',
   keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,Hobby Connectr',
