@@ -1,7 +1,8 @@
 import './globals.css'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
-import favicon from '/src/favicon.ico'
+const favicon = '/favicon.ico'
+
 export const metadata = {
   image: favicon,
   title: 'Hobby Connectr',
