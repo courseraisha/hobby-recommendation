@@ -2,6 +2,7 @@ import './globals.css'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import Head from 'next/head'
+
 export const metadata = {
   image: 'logo.png',
   title: {
@@ -10,7 +11,6 @@ export const metadata = {
   },
   description: 'Discover your perfect hobby through our personalized quiz!',
   keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,Hobby Connectr',
-  
 }
 
 export default function RootLayout({ children }) {
@@ -21,11 +21,17 @@ export default function RootLayout({ children }) {
         <title>Hobby Connectr</title>
         <meta name="Hobby Connectr" content="Discover your perfect hobby through our personalized quiz!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-22VDXGND8P');`}
+        </script>
       </Head>
       <html lang="en" className="min-h-full">
-         <head>
-         <link rel="icon" type="image/x-icon" href="logo.png" />
-         </head>
         <body className="flex min-h-screen flex-col">
           <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky top-0">
             <div className=" flex h-16 items-center justify-between px-4">
@@ -36,12 +42,13 @@ export default function RootLayout({ children }) {
                 <Sparkles className="h-5 w-5" />
                 <span >Hobby Connectr</span>
               </Link>
-              <nav><Link 
-                    href="/quiz" 
-                    className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium py-2 px-4 rounded hover:shadow-lg"
-                  >
-                    Take Quiz
-                  </Link>
+              <nav>
+                <Link 
+                  href="/quiz" 
+                  className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium py-2 px-4 rounded hover:shadow-lg"
+                >
+                  Take Quiz
+                </Link>
               </nav>
             </div>
           </header>
