@@ -12,44 +12,46 @@ function ResultsContent() {
   const [shareableLink, setShareableLink] = useState("")
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-    const userAnswers = Array.from({ length: 10 }, (_, i) => urlParams.get(`q${i + 1}`))
+    try {
+      const urlParams = new URLSearchParams(window.location.search)
+      const userAnswers = Array.from({ length: 10 }, (_, i) => urlParams.get(`q${i + 1}`))
 
-    const hobbyMatches = hobbies.map((hobby) => {
-      let matchCount = 0
-      hobby.tags.forEach((tag, index) => {
-        if (tag === userAnswers[index]) {
-          matchCount++
+      const hobbyMatches = hobbies.map((hobby) => {
+        let matchCount = 0
+        hobby.tags.forEach((tag, index) => {
+          if (tag === userAnswers[index]) {
+            matchCount++
+          }
+        })
+        return {
+          ...hobby,
+          matchCount,
+          matchPercentage: (matchCount / 10) * 100,
         }
       })
-      return {
-        ...hobby,
-        matchCount,
-        matchPercentage: (matchCount / 10) * 100,
+
+      const topMatches = hobbyMatches
+        .filter((hobby) => hobby.matchCount > 0)
+        .sort((a, b) => b.matchCount - a.matchCount)
+        .slice(0, 2)
+
+      if (topMatches.length === 0) {
+        const randomHobbies = hobbies.sort(() => 0.5 - Math.random()).slice(0, 2)
+        setMatchedHobbies(randomHobbies)
+      } else {
+        setMatchedHobbies(topMatches)
       }
-    })
 
-    const topMatches = hobbyMatches
-      .filter((hobby) => hobby.matchCount > 0)
-      .sort((a, b) => b.matchCount - a.matchCount)
-      .slice(0, 2)
-
-    // If no matches found, randomly select two hobbies
-    if (topMatches.length === 0) {
-      const randomHobbies = hobbies.sort(() => 0.5 - Math.random()).slice(0, 2)
-      setMatchedHobbies(randomHobbies)
-    } else {
-      setMatchedHobbies(topMatches)
+      const baseUrl = window.location.origin + "/results"
+      const params = new URLSearchParams()
+      userAnswers.forEach((answer, index) => {
+        params.append(`q${index + 1}`, answer)
+      })
+      setShareableLink(`${baseUrl}?${params.toString()}`)
+    } catch (error) {
+      console.error("Error processing results:", error)
     }
-
-    const baseUrl = window.location.origin + "/results"
-    const params = new URLSearchParams()
-    userAnswers.forEach((answer, index) => {
-      params.append(`q${index + 1}`, answer)
-    })
-    setShareableLink(`${baseUrl}?${params.toString()}`)
   }, [])
-
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -60,7 +62,7 @@ function ResultsContent() {
           {/* Hobby Cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {matchedHobbies.map((hobby, index) => {
-              const videoId = hobby.youtube.split("v=")[1].split("&")[0]
+              const videoId = hobby.youtube.split("v=")[1]?.split("&")[0]
               const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
 
               return (
