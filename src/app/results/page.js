@@ -15,6 +15,8 @@ function ResultsContent() {
     const urlParams = new URLSearchParams(window.location.search)
     const userAnswers = Array.from({ length: 10 }, (_, i) => urlParams.get(`q${i + 1}`))
 
+    console.log("User Answers:", userAnswers)
+
     const hobbyMatches = hobbies.map((hobby) => {
       let matchCount = 0
       hobby.tags.forEach((tag, index) => {
@@ -29,10 +31,14 @@ function ResultsContent() {
       }
     })
 
+    console.log("Hobby Matches:", hobbyMatches)
+
     const topMatches = hobbyMatches
       .filter((hobby) => hobby.matchCount > 0)
       .sort((a, b) => b.matchCount - a.matchCount)
       .slice(0, 2)
+
+    console.log("Top Matches:", topMatches)
 
     // If no matches found, randomly select two hobbies
     if (topMatches.length === 0) {
