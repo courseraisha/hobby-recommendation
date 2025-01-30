@@ -2,7 +2,7 @@ import './globals.css'
 import Link from 'next/link'
 import { Sparkles } from 'lucide-react'
 import Head from 'next/head'
-import Scriptfrom "next/script"
+import Script from "next/script"
 
 export const metadata = {
   image: 'logo.png',
