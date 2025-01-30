@@ -27,19 +27,21 @@ export default function RootLayout({ children }) {
           content="Discover your perfect hobby through our personalized quiz!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"
-        ></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-22VDXGND8P');
-          `}
-        </Script>
+        
       </Head>
+            <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-22VDXGND8P');
+        `}
+      </Script>
         <body className="flex min-h-screen flex-col">
           <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky top-0">
             <div className=" flex h-16 items-center justify-between px-4">
