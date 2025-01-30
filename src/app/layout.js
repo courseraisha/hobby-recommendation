@@ -20,19 +20,24 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="logo.png" />
         <title>Hobby Connectr</title>
-        <meta name="Hobby Connectr" content="Discover your perfect hobby through our personalized quiz!" />
+        <meta
+          name="Hobby Connectr"
+          content="Discover your perfect hobby through our personalized quiz!"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"></Script>
-        <Script id="google-analytics">
-          {
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"
+          strategy="afterInteractive"
+        ></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-              
-                gtag('config', 'G-22VDXGND8P');
-      }
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-22VDXGND8P');
+          `}
         </Script>
- 
       </Head>
       <html lang="en" className="min-h-full">
         <body className="flex min-h-screen flex-col">
