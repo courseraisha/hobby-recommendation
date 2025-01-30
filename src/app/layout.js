@@ -23,14 +23,15 @@ export default function RootLayout({ children }) {
         <meta name="Hobby Connectr" content="Discover your perfect hobby through our personalized quiz!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Google Tag Manager */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"></script>
-        <script>
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-22VDXGND8P');`}
-        </script>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22VDXGND8P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22VDXGND8P');
+</script>
       </Head>
       <html lang="en" className="min-h-full">
         <body className="flex min-h-screen flex-col">
