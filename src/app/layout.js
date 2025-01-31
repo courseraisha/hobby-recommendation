@@ -11,7 +11,7 @@ export const metadata = {
     template: '%s | Hobby Connectr',
   },
   description: 'Discover your perfect hobby through our personalized quiz!',
-  keywords: 'hobbies, interests, quiz, personality, activities, recommendations,hobbies recommendation,Hobby Connectr',
+  keywords: 'hobbies, interests, quiz, this or that game,personality, activities, recommendations,hobbies recommendation,Hobby Connectr',
 }
 
 export default function RootLayout({ children }) {
