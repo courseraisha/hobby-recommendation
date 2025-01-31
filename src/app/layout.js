@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
 
           gtag('config', 'G-22VDXGND8P');
         `}
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1796071074362408" crossorigin="anonymous"></Script>
       </Script>
         <body className="flex min-h-screen flex-col">
           <header className="border-b bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky top-0">
@@ -58,6 +59,14 @@ export default function RootLayout({ children }) {
                   className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium py-2 px-4 rounded hover:shadow-lg"
                 >
                   Take Quiz
+                </Link>
+              </nav>
+              <nav>
+                <Link 
+                  href="/blogs" 
+                  className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium py-2 px-4 rounded hover:shadow-lg"
+                >
+                  Blogs
                 </Link>
               </nav>
             </div>
