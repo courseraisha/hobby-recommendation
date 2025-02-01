@@ -1,0 +1,93 @@
+{
+    "blogs": [
+      {
+        "id": "1",
+        "title": "10 Creative Hobbies to Spark Your Inner Artist (No Talent Required!)",
+        "author": "Isha Singla",
+        "date": "2024-02-01",
+        "content": [
+
+          {
+            "type": "text",
+            "value": "Ever felt like you weren't born with an artistic gene? Think again! Creativity is a muscle you can build with the right activities."
+          },
+          {
+            "type": "image",
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1ZhesEbHlOrSi3PmooZg5ehXqj9AyANHjvg&s",
+            "alt": "Various hobby materials"
+        },
+          {
+            "type": "markdown",
+            "value": "*1. Fluid Painting:* Let colors flow on canvas without worrying about perfection.\n\n*2. Junk Journaling:* Use old magazines and scraps to create a unique journal.\n\n*3. DIY Collage Art:* Design personalized collages from photos and decorative paper.\n\n*4. Digital Sketching:* Experiment with free drawing apps on your tablet.\n\n*5. Stencil Art:* Use stencils and spray paint for a modern look.\n\n*6. Crafting with Recyclables:* Turn everyday trash into treasures.\n\n*7. Upcycled Home Decor:* Transform old furniture into new décor.\n\n*8. Nature Art:* Use natural items like leaves and twigs to create compositions.\n\n*9. Hand Lettering:* Practice beautiful typography.\n\n*10. Mosaic Making:* Create designs with broken tiles or colored glass."
+          },
+
+          {
+            "type": "text",
+            "value": "There's no 'right' way to be creative—just find what resonates with you!"
+          },
+          {
+            "type": "markdown",
+            "value": "Ready to unlock your inner artist? Take the HobbyConnectr Quiz → __[Hobby Connectr](http://hobbyconnectr.com/)__"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "How to Turn Your Creative Hobby into a Side Hustle",
+        "author": "Isha Singla",
+        "date": "2024-02-01",
+        "content": [
+          {
+            "type": "text",
+            "value": "Do you spend hours painting, knitting, or designing DIY projects? What if you could transform that passion into extra income?"
+          },
+          {
+            "type": "image",
+            "url": "https://media.theeverygirl.com/wp-content/uploads/2023/10/hobby-into-side-hustle-the-everygirl-3.jpg",
+            "alt": "Hobbies as side hustles"
+          },
+          {
+            "type": "markdown",
+            "value": "*1. Identify Your Niche:* Figure out what makes your work unique.\n\n*2. Choose the Right Platform:* Explore alternatives to Etsy, such as social media or your own website.\n\n*3. Pricing and Marketing:* Learn pricing strategies and use social media to showcase your work.\n\n*4. Manage Your Time:* Use calendars and project management tools to balance creativity with order fulfillment.\n\n*5. Stay Inspired:* Join creative communities to share ideas and get feedback."
+          },
+          {
+            "type": "text",
+            "value": "Turning a hobby into a side hustle takes planning and persistence—but the rewards are worth it."
+          },
+          {
+            "type": "markdown",
+            "value": "Discover more tips by taking our quiz today! → __[Hobby Connectr](http://hobbyconnectr.com/)__"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "title": "How to Master a Hobby in 30 Days (Free Challenge Template)",
+        "author": "Isha Singla",
+        "date": "2024-02-01",
+        "content": [
+          {
+            "type": "text",
+            "value": "Ever wondered if you could master a new hobby in just 30 days? With focus and a step-by-step challenge template, it’s achievable!"
+        },
+        {
+            "type": "markdown",
+            "value":"*Step 1: Define Your Goal:* Set a specific, measurable target.\n\n*Step 2: Break It Down:* Divide your goal into daily tasks.\n\n*Step 3: Practice Consistently:* Dedicate 15–20 minutes each day.\n\n*Step 4: Seek Feedback:* Join online forums or local groups.\n\n*Step 5: Reflect and Adjust:* Review your progress weekly and fine-tune your plan."
+        },
+          {
+            "type": "image",
+            "url": "https://thelawofattraction.com/wp-content/uploads/30-challenges-30-days-will-make-better-person.jpg",
+            "alt": "Hobbies as side hustles"
+          },
+          {
+            "type": "markdown",
+            "value": "Mastering a new hobby in 30 days is challenging yet achievable with the right mindset and plan."
+         },
+         {
+            "type":"markdown",
+            "value":"Ready to accept the challenge? Take our quiz to pick your 30-day hobby challenge today → __[Hobby Connectr](http://hobbyconnectr.com/)__"
+         }
+        ]
+      }
+    ]
+  }
