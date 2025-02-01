@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Progress } from "@/components/ui/progress"
-import { Card, CardContent } from "@/components/ui/card"
+import {Progress} from '@/components/ui/progress'
+import {Card, CardContent} from '@/components/ui/card'
 import { Sparkles } from 'lucide-react'
 import { questions } from "../../../data/questions"
 import styles from './quiz.module.css'

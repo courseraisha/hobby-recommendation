@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Compass, Heart, Sparkles } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-
+import Button from '@/components/ui/button'
+import {Card, CardContent} from '@/components/ui/card'
 export default function Page() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#fff]">
