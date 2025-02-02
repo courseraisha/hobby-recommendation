@@ -39,9 +39,6 @@ export default function BlogsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#8B1E3F]/5 to-white p-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center text-[#8B1E3F]">
-          Hobby Connectr Blog
-        </h1>
         
         <div className="grid gap-6">
           {blogs.map((blog) => {
