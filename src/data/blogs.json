@@ -68,7 +68,7 @@
         "content": [
           {
             "type": "text",
-            "value": "Ever wondered if you could master a new hobby in just 30 days? With focus and a step-by-step challenge template, it’s achievable!"
+            "value": "Ever wondered if you could master a new hobby in just 30 days? With focus and a step-by-step challenge template, it's achievable!"
         },
         {
             "type": "markdown",
@@ -87,6 +87,32 @@
             "type":"markdown",
             "value":"Ready to accept the challenge? Take our quiz to pick your 30-day hobby challenge today → __[Hobby Connectr](http://hobbyconnectr.com/)__"
          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "How to Learn a New Language Through Hobbies",
+        "author": "Isha Singla",
+        "date": "2024-02-02",
+        "content": [
+          {
+            "type": "markdown",
+            "value":"*1. Salsa Dancing for Spanish:* Join a salsa class where the rhythm helps you absorb Spanish.\n\n*2. Anime for Japanese:* Watch anime with subtitles to pick up conversational Japanese.\n\n*3. Cooking Classes for French:* Learn culinary terms while preparing delicious recipes.\n\n*4. Language Meetups:* Join virtual groups for relaxed language exchange.\n\n*5. Cultural Immersion:* Engage with clubs or watch foreign films to enhance your skills."
+          },
+          {
+            "type": "image",
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRynOgTHcj1F-RU9o560NLxw7xJWUhLuPy5bA&s",
+            "alt": "Hobbies as side hustles"
+          },
+          {
+              "type": "markdown",
+              "value":"Integrating language learning into your hobbies makes the process organic and enjoyable."
+
+          },
+           {
+              "type":"markdown",
+              "value":"Ready to accept the challenge? Take our quiz to pick your 30-day hobby challenge today → __[Hobby Connectr](http://hobbyconnectr.com/)__"
+           }
         ]
       }
     ]
