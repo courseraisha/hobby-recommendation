@@ -114,6 +114,31 @@
               "value":"Ready to accept the challenge? Take our quiz to pick your 30-day hobby challenge today → __[Hobby Connectr](http://hobbyconnectr.com/)__"
            }
         ]
+      },
+      {
+        "id": "5",
+        "title": "Cooking: The Delicious Science of Creativity",
+        "author": "Isha Singla",
+        "date": "2024-02-03",
+        "content": [
+          {
+            "type": "markdown",
+            "value" : "The Brain-Boosting Magic of Cooking\n\n *Stress reduction:* A 2022 study found that people who cook 3–5 times a week report 30% lower anxiety levels than non-cooks. Chopping veggies = chopping stress!\n\n *Cognitive perks:* Following recipes improves memory and problem-solving skills. Ever tried baking sourdough? It’s basically edible chemistry.\n\n *Fun fact:* The first recorded recipe (circa 1600 BC) was for Mesopotamian beer bread—proof that humans have always prioritized tasty carbs."
+          },
+          {
+            "type": "image",
+            "url": "https://www.njlifestylemag.com/content/images/size/w1304/2023/12/AdobeStock_267334945.jpeg",
+            "alt": "Cooking"
+          },
+          {
+              "type": "markdown",
+              "value":"Cooking Through the Ages\n\n *Ancient hack:* Roman chefs used fermented fish sauce (garum) as their “ketchup.”\n\n *Modern twist:* The chocolate chip cookie was invented by accident in 1938 when Ruth Wakefield ran out of baker’s chocolate and used Nestlé chunks instead."
+          },
+           {
+              "type":"markdown",
+              "value":"Pro Tip\n\n Not sure where to start? Take the __*[HobbyConnectr Quiz](http://hobbyconnectr.com/)*__ to discover if you’re a MasterChef-in-training or a weekend BBQ hero."
+           }
+        ]
       }
     ]
   }
