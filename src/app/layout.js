@@ -1,6 +1,6 @@
 import "./globals.css"
 import Link from "next/link"
-import { Sparkles, Coffee } from "lucide-react"
+import { Sparkles, Coffee, Instagram, Twitter } from "lucide-react"
 import Head from "next/head"
 import Script from "next/script"
 
@@ -137,19 +137,40 @@ export default function RootLayout({ children }) {
           <main className="flex-1">{children}</main>
 
           <footer className="border-t bg-white/50 backdrop-blur-sm dark:bg-gray-950/50 sticky bottom-0">
-            <div className="container flex flex-col items-center gap-2 px-4 py-6 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between">
+            <div className="container flex flex-col items-center gap-4 px-4 py-6 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between">
               <p>&copy; {new Date().getFullYear()} Hobby Recommendations. All rights reserved.</p>
-              <p className="flex items-center gap-1">
-                Made with <span className="animate-pulse text-red-500">❤️</span> by{" "}
+              
+              <div className="flex items-center gap-4">
                 <Link
-                  href="https://www.linkedin.com/in/isha-singla16/"
+                  href="https://www.instagram.com/hobbyconnectr/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-large text-[#8B1E3F] underline"
+                  className="text-[#8B1E3F] hover:text-[#E3425F] transition-colors"
                 >
-                  Isha
+                  <Instagram className="h-5 w-5" />
                 </Link>
-              </p>
+                <Link
+                  href="https://x.com/HobbyConnectr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8B1E3F] hover:text-[#E3425F] transition-colors"
+                >
+                  <Twitter className="h-5 w-5" />
+                </Link>
+                <span className="text-gray-300">|</span>
+                <p className="flex items-center gap-1">
+                  Made with <span className="animate-pulse text-red-500">❤️</span> by{" "}
+                  <Link 
+                    href="https://www.linkedin.com/in/isha-singla16/" 
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="font-large text-[#8B1E3F] underline"
+                  >
+                    Isha
+                  </Link>
+                </p>
+              </div>
+
               <Link
                 href="https://www.buymeacoffee.com/isha_singla"
                 target="_blank"
@@ -160,7 +181,7 @@ export default function RootLayout({ children }) {
                   <div className="steam" />
                   <Coffee className="w-5 h-5 mr-2 coffee-icon" />
                 </div>
-                <span className="font-medium">Buy me a coffee</span>
+                <span className="font-medium italic">Buy me a coffee</span>
               </Link>
             </div>
           </footer>
