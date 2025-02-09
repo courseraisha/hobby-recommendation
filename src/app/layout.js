@@ -80,7 +80,7 @@ export const metadata = {
   },
   description: "Discover your perfect hobby through our personalized quiz!",
   keywords:
-    "hobbies, interests, quiz, this or that game,hobby finder,hobby recommendation,hobby,personality, activities, recommendations,hobbies recommendation,Hobby Connectr",
+    "hobbies,hobby mistry,hobby lobby,turning hobbies into side hustle,interests, quiz, this or that game,hobby finder,hobby recommendation,hobby,personality, activities, recommendations,hobbies recommendation,Hobby Connectr",
 }
 
 export default function RootLayout({ children }) {
