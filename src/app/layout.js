@@ -130,6 +130,12 @@ export default function RootLayout({ children }) {
                 >
                   Blogs
                 </Link>
+                <Link
+                  href="/faq"
+                  className="bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white font-medium py-2 px-4 rounded hover:shadow-lg"
+                >
+                  FAQ
+                </Link>
               </nav>
             </div>
           </header>
