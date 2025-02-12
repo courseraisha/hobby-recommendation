@@ -75,12 +75,22 @@ const coffeeStyles = `
 export const metadata = {
   image: "logo.png",
   title: {
-    default: "Hobby Connectr",
+    default: "Find Your Perfect Hobby with Hobby Connectr",
     template: "%s | Hobby Connectr",
   },
-  description: "Discover your perfect hobby through our personalized quiz!",
-  keywords:
-    "hobbies,hobby mistry,hobby lobby,turning hobbies into side hustle,interests, quiz, this or that game,hobby finder,hobby recommendation,hobby,personality, activities, recommendations,hobbies recommendation,Hobby Connectr",
+  description: "Find Your Perfect Hobby with Hobby Connectr",
+  keywords: [
+    "hobby",
+    "hobbies",
+    "hobby finder",
+    "hobby recommendation",
+    "hobby quiz",
+    "hobby ideas",
+    "hobby interests",
+    "hobby side hustle",
+    "activity recommendations",
+    "personal interests"
+  ].join(', ')
 }
 
 export default function RootLayout({ children }) {
@@ -90,7 +100,7 @@ export default function RootLayout({ children }) {
         <Head>
           <link rel="icon" href="logo.png" />
           <title>Hobby Connectr</title>
-          <meta name="Hobby Connectr" content="Discover your perfect hobby through our personalized quiz!" />
+          <meta name="Hobby Connectr" content="Discover your ideal hobby through our personalized quiz and recommendations. Explore new interests, turn hobbies into side hustles, and find fulfilling activities." />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <style>{coffeeStyles}</style>
         </Head>
