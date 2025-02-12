@@ -75,10 +75,10 @@ const coffeeStyles = `
 export const metadata = {
   image: "logo.png",
   title: {
-    default: "Find Your Perfect Hobby with Hobby Connectr",
+    default: "Discover your perfect hobby match with Hobby Connectr's personalized recommendations and quiz. Find new activities and interests to explore.",
     template: "%s | Hobby Connectr",
   },
-  description: "Find Your Perfect Hobby with Hobby Connectr",
+  description: "Discover your perfect hobby match with Hobby Connectr's personalized recommendations and quiz. Find new activities and interests to explore.",
   keywords: [
     "hobby",
     "hobbies",

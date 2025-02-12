@@ -60,7 +60,7 @@ export default function Page() {
           <Card className="group relative overflow-hidden border-2 border-[#F7B2BD]/20 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#F7B2BD] hover:shadow-lg">
             <CardContent className="flex flex-col items-center p-8">
               <Sparkles className="h-8 w-8 text-[#E3425F]" />
-              <h2 className="mb-3 text-xl font-semibold text-[#8B1E3F]">Quick & Easy</h2>
+              <h2 className="mb-3 text-xl font-semibold text-[#8B1E3F]">Quick & Easy Hobby Recommendations</h2>
               <p className="text-center text-sm leading-relaxed text-[#E3425F]">
                 A simple quiz that takes just minutes to unlock new possibilities.
               </p>
