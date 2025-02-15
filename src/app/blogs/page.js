@@ -93,8 +93,11 @@ export default function BlogsPage() {
   }
 
   const filteredBlogsBySearch = filteredBlogs.filter(blog =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.description.toLowerCase().includes(searchTerm.toLowerCase())
+    blog.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    blog.content?.some(content => 
+      content.type === 'text' && 
+      content.value?.toLowerCase().includes(searchTerm.toLowerCase())
+    )
   )
 
   return (
@@ -108,7 +111,7 @@ export default function BlogsPage() {
             placeholder="Search blogs..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#8B1E3F] focus:border-transparent outline-none"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-[#8B1E3F]/20 focus:ring-2 focus:ring-[#8B1E3F]/20 focus:border-[#8B1E3F] outline-none"
           />
         </div>
 
