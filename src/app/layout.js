@@ -75,22 +75,42 @@ const coffeeStyles = `
 export const metadata = {
   image: "logo.png",
   title: {
-    default: "Discover your perfect hobby match with Hobby Connectr's personalized recommendations and quiz. Find new activities and interests to explore.",
-    template: "%s | Hobby Connectr",
+    default: 'Hobby Connectr | Find Your Perfect Hobby',
+    template: '%s | Hobby Connectr'
   },
-  description: "Discover your perfect hobby match with Hobby Connectr's personalized recommendations and quiz. Find new activities and interests to explore.",
+  description: 'Discover your perfect hobby with Hobby Connectr. Take our personalized quiz, explore curated hobby guides, track your progress, and connect with a community of passionate hobbyists.',
   keywords: [
-    "hobby",
-    "hobbies",
-    "hobby finder",
-    "hobby recommendation",
-    "hobby quiz",
-    "hobby ideas",
-    "hobby interests",
-    "hobby side hustle",
-    "activity recommendations",
-    "personal interests"
-  ].join(', ')
+    'hobby finder',
+    'hobby matching',
+    'hobby quiz',
+    'hobby recommendations',
+    'hobby guides',
+    'hobby tracking',
+    'hobby community',
+    'learn new hobbies',
+    'hobby progress',
+    'hobby tutorials'
+  ].join(', '),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://hobbyconnectr.com',
+    siteName: 'Hobby Connectr',
+    images: [
+      {
+        url: 'https://hobbyconnectr.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Hobby Connectr - Find Your Perfect Hobby'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hobby Connectr | Find Your Perfect Hobby',
+    description: 'Discover your perfect hobby with personalized recommendations and expert guidance.',
+    images: ['https://hobbyconnectr.com/twitter-card.jpg']
+  }
 }
 
 export default function RootLayout({ children }) {

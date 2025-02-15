@@ -1,9 +1,25 @@
 import { Metadata } from 'next'
 
 export const metadata = {
-  title: 'Hobby Blog | Creative Hobbies, DIY Projects & Hobby Guides',
-  description: 'Discover creative hobbies, DIY projects, and expert guides to help you find and master your perfect hobby. Get inspired with our hobby blog!',
-  keywords: 'hobby blog, creative hobbies, DIY projects, hobby guides, hobby ideas, hobby tutorials, hobby inspiration, hobby tips, hobby crafts, hobby activities',
+  title: 'Hobby Blog | Expert Guides & Community Stories',
+  description: 'Explore in-depth hobby guides, expert tips, success stories, and community insights. Learn from experienced hobbyists, discover new techniques, and get inspired.',
+  keywords: [
+    'hobby blog',
+    'hobby guides',
+    'hobby tips',
+    'hobby tutorials',
+    'hobby stories',
+    'hobby community',
+    'hobby inspiration',
+    'hobby techniques',
+    'hobby advice',
+    'hobby experiences'
+  ].join(', '),
+  openGraph: {
+    title: 'Hobby Connectr Blog - Expert Guides & Stories',
+    description: 'Discover hobby guides, tips, and community stories',
+    images: [{ url: 'https://hobbyconnectr.com/blog-preview.jpg' }]
+  }
 }
 
 export default function BlogLayout({ children }) {
