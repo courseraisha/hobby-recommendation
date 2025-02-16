@@ -131,32 +131,40 @@ export function PDFViewer({ isOpen, onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl w-full max-w-4xl h-[80vh] relative animate-scale-in">
-        <div className="absolute top-4 right-4 flex gap-2">
-          <button
-            onClick={handleDownload}
-            className="p-2 hover:bg-[#8B1E3F]/10 rounded-full transition-colors text-[#8B1E3F] flex items-center gap-2"
-          >
-            <Download className="h-6 w-6" />
-            <span className="text-sm font-medium">Download PDF</span>
-          </button>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-          >
-            <X className="h-6 w-6 text-gray-500" />
-          </button>
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start justify-center p-0 sm:p-4 z-[60]">
+      <div className="bg-white w-full sm:rounded-xl sm:max-w-4xl h-screen sm:h-[90vh] relative animate-scale-in sm:mt-20">
+        {/* Header Bar */}
+        <div className="sticky top-0 bg-white border-b border-gray-100 p-4 flex items-center justify-between sm:absolute sm:border-0">
+          <h3 className="text-lg font-semibold text-[#8B1E3F] sm:hidden">
+            7-Day Fitness Challenge
+          </h3>
+          <div className="flex gap-2">
+            <button
+              onClick={handleDownload}
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#8B1E3F]/10 rounded-full text-[#8B1E3F] hover:bg-[#8B1E3F]/20 transition-colors"
+            >
+              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="text-sm font-medium hidden sm:inline">Download PDF</span>
+            </button>
+            <button
+              onClick={onClose}
+              className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="h-5 w-5 text-gray-500" />
+            </button>
+          </div>
         </div>
         
-        <div id="pdf-content" className="p-8 h-full overflow-y-auto">
-          <h2 className="text-3xl font-bold text-[#8B1E3F] mb-6">7-Day Beginner Fitness Challenge</h2>
+        <div id="pdf-content" className="p-4 sm:p-8 h-[calc(100vh-4rem)] sm:h-full overflow-y-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#8B1E3F] mb-6 hidden sm:block">
+            7-Day Beginner Fitness Challenge
+          </h2>
           
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-8">
             {/* Introduction */}
             <section>
-              <h3 className="text-xl font-semibold mb-4">How It Works:</h3>
-              <ul className="list-disc pl-6 space-y-2">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">How It Works:</h3>
+              <ul className="list-disc pl-4 sm:pl-6 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
                 <li>Duration: 10-20 minutes per day</li>
                 <li>No Equipment Needed</li>
                 <li>Perfect for All Fitness Levels!</li>
@@ -165,18 +173,22 @@ export function PDFViewer({ isOpen, onClose }) {
 
             {/* Daily Workouts */}
             {[1, 2, 3, 4, 5, 6, 7].map((day) => (
-              <section key={day} className="p-6 bg-gray-50 rounded-xl">
-                <h3 className="text-xl font-semibold text-[#8B1E3F] mb-4">Day {day}</h3>
-                <div className="space-y-4">
+              <section key={day} className="p-4 sm:p-6 bg-gray-50 rounded-lg sm:rounded-xl">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#8B1E3F] mb-3 sm:mb-4">
+                  Day {day}
+                </h3>
+                <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
                   {getDayWorkout(day)}
                 </div>
               </section>
             ))}
 
             {/* Extra Motivation */}
-            <section className="p-6 bg-[#8B1E3F]/5 rounded-xl">
-              <h3 className="text-xl font-semibold text-[#8B1E3F] mb-4">Extra Motivation</h3>
-              <ul className="list-disc pl-6 space-y-2">
+            <section className="p-4 sm:p-6 bg-[#8B1E3F]/5 rounded-lg sm:rounded-xl">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#8B1E3F] mb-3 sm:mb-4">
+                Extra Motivation
+              </h3>
+              <ul className="list-disc pl-4 sm:pl-6 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
                 <li>Take progress pictures on Day 1 & Day 7</li>
                 <li>Create a workout playlist to keep moving</li>
                 <li>Challenge a friend & do it together</li>
