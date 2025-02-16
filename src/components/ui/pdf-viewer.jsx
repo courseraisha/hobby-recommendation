@@ -1,5 +1,5 @@
 "use client"
-import { X, Download } from "lucide-react"
+import { X, Download, Share2 } from "lucide-react"
 import jsPDF from 'jspdf'
 
 export function PDFViewer({ isOpen, onClose }) {
@@ -134,67 +134,69 @@ export function PDFViewer({ isOpen, onClose }) {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start justify-center p-0 sm:p-4 z-[60]">
       <div className="bg-white w-full sm:rounded-xl sm:max-w-4xl h-screen sm:h-[90vh] relative animate-scale-in sm:mt-20">
         {/* Header Bar */}
-        <div className="sticky top-0 bg-white border-b border-gray-100 p-4 flex items-center justify-between sm:absolute sm:border-0">
-          <h3 className="text-lg font-semibold text-[#8B1E3F] sm:hidden">
-            7-Day Fitness Challenge
-          </h3>
-          <div className="flex gap-2">
-            <button
-              onClick={handleDownload}
-              className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#8B1E3F]/10 rounded-full text-[#8B1E3F] hover:bg-[#8B1E3F]/20 transition-colors"
-            >
-              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span className="text-sm font-medium hidden sm:inline">Download PDF</span>
-            </button>
+        <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
             <button
               onClick={onClose}
-              className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             >
               <X className="h-5 w-5 text-gray-500" />
             </button>
+            <h3 className="text-lg font-semibold text-[#8B1E3F]">
+              7-Day Fitness Challenge
+            </h3>
           </div>
+          
+          <button
+            onClick={handleDownload}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#8B1E3F] text-white rounded-lg hover:bg-[#8B1E3F]/90 transition-colors"
+          >
+            <Download className="h-5 w-5" />
+            Download PDF
+          </button>
         </div>
         
-        <div id="pdf-content" className="p-4 sm:p-8 h-[calc(100vh-4rem)] sm:h-full overflow-y-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#8B1E3F] mb-6 hidden sm:block">
-            7-Day Beginner Fitness Challenge
-          </h2>
-          
-          <div className="space-y-4 sm:space-y-8">
-            {/* Introduction */}
-            <section>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">How It Works:</h3>
-              <ul className="list-disc pl-4 sm:pl-6 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                <li>Duration: 10-20 minutes per day</li>
-                <li>No Equipment Needed</li>
-                <li>Perfect for All Fitness Levels!</li>
-              </ul>
-            </section>
+        {/* Content Area */}
+        <div className="p-4 sm:p-6 h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="max-w-3xl mx-auto">
+            {/* Title */}
+            <h2 className="text-2xl font-bold text-[#8B1E3F] mb-4">
+              7-Day Beginner Fitness Challenge
+            </h2>
+            
+            <p className="text-gray-600 mb-6">
+              Transform your routine with our beginner-friendly program. Just 10-20 minutes daily, no equipment needed!
+            </p>
+
+            {/* Features */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="text-center">
+                <div className="text-2xl mb-1">⏱️</div>
+                <div className="text-sm text-[#8B1E3F]">10-20 min/day</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl mb-1">💪</div>
+                <div className="text-sm text-[#8B1E3F]">No Equipment</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl mb-1">🎯</div>
+                <div className="text-sm text-[#8B1E3F]">All Levels</div>
+              </div>
+            </div>
 
             {/* Daily Workouts */}
             {[1, 2, 3, 4, 5, 6, 7].map((day) => (
-              <section key={day} className="p-4 sm:p-6 bg-gray-50 rounded-lg sm:rounded-xl">
-                <h3 className="text-lg sm:text-xl font-semibold text-[#8B1E3F] mb-3 sm:mb-4">
-                  Day {day}
-                </h3>
-                <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
-                  {getDayWorkout(day)}
+              <div key={day} className="mb-6">
+                <div className="bg-[#8B1E3F] text-white px-4 py-2 rounded-t-lg">
+                  <h3 className="text-lg font-semibold">Day {day}</h3>
                 </div>
-              </section>
+                <div className="bg-white px-4 py-3 rounded-b-lg border border-t-0 border-gray-200">
+                  <div className="space-y-2">
+                    {getDayWorkout(day)}
+                  </div>
+                </div>
+              </div>
             ))}
-
-            {/* Extra Motivation */}
-            <section className="p-4 sm:p-6 bg-[#8B1E3F]/5 rounded-lg sm:rounded-xl">
-              <h3 className="text-lg sm:text-xl font-semibold text-[#8B1E3F] mb-3 sm:mb-4">
-                Extra Motivation
-              </h3>
-              <ul className="list-disc pl-4 sm:pl-6 space-y-1.5 sm:space-y-2 text-sm sm:text-base">
-                <li>Take progress pictures on Day 1 & Day 7</li>
-                <li>Create a workout playlist to keep moving</li>
-                <li>Challenge a friend & do it together</li>
-                <li>Share your progress on Instagram @HobbyConnectr</li>
-              </ul>
-            </section>
           </div>
         </div>
       </div>
@@ -254,12 +256,10 @@ function getDayWorkout(day) {
   }
 
   return (
-    <ul className="list-disc pl-6 space-y-2">
+    <ul className="list-disc pl-5 text-gray-700 space-y-4">
       {workouts[day]?.map((exercise, index) => (
-        <li key={index} className="text-gray-700">{exercise}</li>
-      )) || (
-        <li className="text-gray-700">Rest and reflect on your progress!</li>
-      )}
+        <li key={index}>{exercise}</li>
+      ))}
     </ul>
   )
 } 
