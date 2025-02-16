@@ -8,118 +8,75 @@ export function PDFViewer({ isOpen, onClose }) {
   const handleDownload = () => {
     const doc = new jsPDF()
     
-    // Set font
+    // Set initial font styles
     doc.setFont('helvetica')
     
-    // Title Page
+    // Add header background
+    doc.setFillColor(139, 30, 63) // #8B1E3F
+    doc.rect(0, 0, doc.internal.pageSize.getWidth(), 60, 'F')
+    
+    // Title
+    doc.setTextColor(255, 255, 255)
     doc.setFontSize(28)
-    doc.setTextColor(139, 30, 63) // #8B1E3F
-    doc.text('7-Day Fitness Challenge', 20, 30)
+    doc.text('7-Day Fitness Challenge', 20, 40)
     
-    doc.setFontSize(14)
-    doc.setTextColor(80, 80, 80)
-    doc.text('Your Journey to a Healthier Lifestyle', 20, 45)
+    let yPos = 80
 
-    // Introduction
-    let yPos = 70
-    doc.setFontSize(16)
-    doc.setTextColor(139, 30, 63)
-    doc.text('How It Works:', 20, yPos)
+    // Stats line with border
+    doc.setDrawColor(139, 30, 63)
+    doc.setLineWidth(0.5)
+    doc.roundedRect(20, yPos, 170, 30, 2, 2)
     
-    yPos += 10
     doc.setFontSize(12)
-    doc.setTextColor(0)
-    doc.text('• Duration: 10-20 minutes per day', 25, yPos)
-    doc.text('• No Equipment Needed', 25, yPos + 7)
-    doc.text('• Perfect for All Fitness Levels!', 25, yPos + 14)
-    
-    // Preparation Tips
-    yPos += 30
-    doc.setFontSize(16)
-    doc.setTextColor(139, 30, 63)
-    doc.text('Preparation Tips:', 20, yPos)
-    
-    yPos += 10
-    doc.setFontSize(12)
-    doc.setTextColor(0)
-    const prepTips = [
-      'Set a consistent workout time each day',
-      'Wear comfortable clothing',
-      'Stay hydrated (drink water before/after)',
-      'Clear a small space for movement',
-      'Have a towel ready'
-    ]
-    prepTips.forEach(tip => {
-      doc.text(`• ${tip}`, 25, yPos)
-      yPos += 7
-    })
+    doc.setTextColor(80, 80, 80)
+    doc.text('10-20 min/day', 40, yPos + 12)
+    doc.text('No Equipment', 95, yPos + 12)
+    doc.text('All Levels', 150, yPos + 12)
+
+    yPos += 45
 
     // Daily Workouts
-    doc.addPage()
-    yPos = 20
-
     for (let day = 1; day <= 7; day++) {
+      // Add new page if needed
       if (yPos > 250) {
         doc.addPage()
-        yPos = 20
+        yPos = 30
       }
 
-      doc.setFontSize(16)
-      doc.setTextColor(139, 30, 63)
-      doc.text(`Day ${day}`, 20, yPos)
+      // Day Header
+      doc.setFillColor(139, 30, 63)
+      doc.rect(20, yPos, 170, 25, 'F')
+      doc.setTextColor(255, 255, 255)
+      doc.setFontSize(14)
+      doc.text(`Day ${day}`, 30, yPos + 16)
       
-      yPos += 10
+      yPos += 35
+
+      // Workouts
+      doc.setTextColor(60, 60, 60)
       doc.setFontSize(12)
-      doc.setTextColor(0)
-      
       const workouts = getDayWorkout(day)
       workouts.props.children.forEach((workout) => {
-        if (yPos > 280) {
-          doc.addPage()
-          yPos = 20
-        }
-        doc.text(`• ${workout.props.children}`, 25, yPos)
-        yPos += 7
+        // Bullet point
+        doc.circle(25, yPos - 1, 1, 'F')
+        // Workout text
+        doc.text(workout.props.children, 35, yPos)
+        yPos += 8
       })
       
       yPos += 15
     }
 
-    // Tips for Success
-    doc.addPage()
-    yPos = 20
-    
-    doc.setFontSize(16)
-    doc.setTextColor(139, 30, 63)
-    doc.text('Tips for Success', 20, yPos)
-    
-    yPos += 10
-    doc.setFontSize(12)
-    doc.setTextColor(0)
-    
-    const tips = [
-      'Start slowly and gradually increase intensity',
-      'Listen to your body and rest when needed',
-      'Celebrate small victories',
-      'Take progress photos (optional)',
-      'Join our community for support',
-      'Share your journey on Instagram @HobbyConnectr',
-      'Remember: consistency over perfection'
-    ]
-    
-    tips.forEach(tip => {
-      doc.text(`• ${tip}`, 25, yPos)
-      yPos += 7
-    })
-
     // Footer on each page
     const pageCount = doc.internal.getNumberOfPages()
-    doc.setFontSize(10)
-    doc.setTextColor(128)
     for (let i = 1; i <= pageCount; i++) {
       doc.setPage(i)
+      
+      // Page number
+      doc.setFontSize(10)
+      doc.setTextColor(100, 100, 100)
       doc.text(
-        `Hobby Connectr Fitness Challenge - Page ${i} of ${pageCount}`,
+        `${i} / ${pageCount}`,
         doc.internal.pageSize.getWidth() / 2,
         doc.internal.pageSize.getHeight() - 10,
         { align: 'center' }
