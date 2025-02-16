@@ -21,13 +21,12 @@ export default function Page() {
       </div>
 
       <div className="relative">
-        {/* Main Content Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex lg:gap-12 lg:items-start lg:py-24">
             {/* Left Column - Main Content */}
             <div className="flex-[1.4] pt-24 lg:pt-0">
-              {/* Enhanced Hero Section */}
-              <div className="text-center lg:text-left pb-16">
+              {/* Hero Section */}
+              <div className="text-center lg:text-left pb-8 lg:pb-16">
                 <div className="space-y-8">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#8B1E3F]/5 rounded-full">
                     <Sparkles className="h-4 w-4 text-[#8B1E3F] animate-pulse" />
@@ -57,7 +56,71 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Enhanced Feature Cards */}
+              {/* Mobile Challenge Section - Only visible on mobile */}
+              <div className="block lg:hidden mb-12">
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] rounded-2xl blur opacity-30"></div>
+                  <div className="relative bg-white rounded-xl p-6 shadow-xl border border-[#8B1E3F]/10">
+                    {/* Challenge Header */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#8B1E3F]/5 rounded-full mb-6">
+                      <Trophy className="h-5 w-5 text-[#8B1E3F] animate-pulse" />
+                      <span className="text-sm font-semibold text-[#8B1E3F] uppercase tracking-wider">
+                        Featured Challenge
+                      </span>
+                    </div>
+
+                    {/* Challenge Content */}
+                    <div className="space-y-4">
+                      <h2 className="text-xl font-bold bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] bg-clip-text text-transparent">
+                        7-Day Fitness Challenge
+                      </h2>
+                      <p className="text-gray-600 text-sm">
+                        Transform your routine with our beginner-friendly program. Just 10-20 minutes daily, no equipment needed!
+                      </p>
+
+                      {/* Feature Grid */}
+                      <div className="grid grid-cols-1 gap-3">
+                        {[
+                          { title: "Daily Workouts", desc: "Guided exercises for all levels" },
+                          { title: "Track Progress", desc: "Monitor your improvements" },
+                          { title: "Community", desc: "Join fellow enthusiasts" },
+                        ].map((feature, index) => (
+                          <div
+                            key={index}
+                            className="group flex items-start gap-3 p-3 bg-[#8B1E3F]/5 rounded-lg transition-all hover:bg-[#8B1E3F]/10"
+                          >
+                            <Star className="h-4 w-4 text-[#8B1E3F] mt-1 group-hover:animate-pulse" />
+                            <div>
+                              <h3 className="font-semibold text-[#8B1E3F] text-sm">{feature.title}</h3>
+                              <p className="text-xs text-gray-600">{feature.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Challenge Icon */}
+                      <div className="relative w-full h-24 my-4">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#8B1E3F] to-[#E3425F] rounded-full opacity-20 animate-pulse"></div>
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <Dumbbell className="w-16 h-16 text-[#8B1E3F] transition-transform hover:scale-110" />
+                        </div>
+                      </div>
+
+                      {/* CTA Button */}
+                      <button
+                        onClick={() => setShowChallenge(true)}
+                        className="w-full group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] text-white rounded-lg overflow-hidden transition-all hover:shadow-lg hover:scale-105"
+                      >
+                        <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                        <Dumbbell className="h-4 w-4 group-hover:animate-bounce" />
+                        <span className="font-medium text-sm">Get Free Workout Plan</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature Cards */}
               <div className="py-12">
                 <h2 className="text-3xl font-bold text-center lg:text-left text-[#8B1E3F] mb-10">
                   Why Choose Hobby Connectr?
@@ -103,8 +166,8 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Enhanced Right Column - Featured Challenge */}
-            <div className="lg:w-[400px] lg:sticky lg:top-8 mt-16 lg:mt-0">
+            {/* Desktop Challenge Section - Only visible on desktop */}
+            <div className="hidden lg:block lg:w-[400px] lg:sticky lg:top-8">
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#8B1E3F] to-[#E3425F] rounded-2xl blur opacity-30"></div>
                 <div className="relative bg-white rounded-xl p-6 shadow-xl border border-[#8B1E3F]/10">
